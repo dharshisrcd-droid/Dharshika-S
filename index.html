@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DHARSHIKA S – Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== Colors (edit here) ===== */
+:root{
+  --dark:#1c1c1e;
+  --panel:#ebebeb;
+  --accent:#ffc700;
+  --heading:#1a1a2e;
+  --text:#333;
+  --track:#5b5b63;
+  --page-bg:#d9d9d9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--page-bg)}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--text);font-size:12.5px;line-height:1.6;padding:30px 12px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+/* ===== Page (A4) ===== */
+.page{width:210mm;min-height:297mm;margin:0 auto;background:#fff;padding:30px;box-shadow:0 25px 60px rgba(0,0,0,.35)}
+.grid{display:grid;grid-template-columns:33% 67%;min-height:calc(297mm - 60px)}
+
+/* placeholders: [bracketed] text gets a subtle highlight */
+.ph{background:rgba(255,199,0,.28);padding:0 3px;border-radius:2px}
+
+/* section heading + yellow bar */
+h2{font-family:'Raleway',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:15px;color:var(--heading)}
+h2::after{content:"";display:block;width:32px;height:3px;background:var(--accent);margin:10px 0 16px}
+.pill{display:inline-block;background:var(--accent);color:#222;font-weight:600;font-size:11px;padding:1px 10px;border-radius:3px}
+
+/* ===== LEFT COLUMN ===== */
+.left{display:flex;flex-direction:column}
+.photo{position:relative;background:var(--dark);height:330px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.photo svg{width:62%;height:auto;opacity:.5}
+.photo .label{position:absolute;left:43px;bottom:-1px;transform:translateY(50%);z-index:2}
+.badge-big{background:var(--accent);color:#222;font-family:'Raleway',sans-serif;font-weight:800;letter-spacing:.3em;font-size:15px;padding:6px 20px;display:inline-block}
+.edu{background:var(--dark);color:#fff;padding:52px 43px 36px}
+.edu h2{color:#fff}
+.edu h3{font-size:13px;font-weight:600;text-transform:uppercase;line-height:1.4;margin-bottom:6px}
+.edu p{font-size:12px;color:#e6e6e6}
+.skills{background:var(--panel);padding:34px 28px 20px 43px}
+.skill{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;font-size:12.5px}
+.skill span{flex:0 0 46%}
+.bar{flex:1;height:3px;background:var(--track);position:relative}
+.bar i{position:absolute;left:0;top:0;height:100%;width:var(--level);background:var(--accent)}
+.contact{background:var(--panel);flex:1;display:flex;padding:0 0 0 43px}
+.contact .strip{background:var(--accent);width:48px;display:flex;flex-direction:column;justify-content:space-around;align-items:center;padding:14px 0}
+.contact .strip svg{width:20px;height:20px;fill:#222}
+.contact ul{list-style:none;padding:14px 12px 14px 16px;display:flex;flex-direction:column;justify-content:space-around;font-size:11.5px;word-break:break-word}
+.contact b{font-weight:600;font-size:12.5px;display:block}
+
+/* ===== RIGHT COLUMN ===== */
+.header{background:var(--panel);padding:48px 40px 34px 52px}
+.name{font-family:'Raleway',sans-serif;font-weight:800;font-size:44px;letter-spacing:.04em;color:var(--heading);line-height:1.1}
+.title-badge{display:inline-block;background:var(--accent);font-family:'Raleway',sans-serif;font-weight:700;font-size:12px;letter-spacing:.3em;padding:1px 12px;margin:10px 0 28px;color:var(--heading)}
+.header h2{text-transform:uppercase}
+.header p{font-size:12px}
+.body{padding:30px 40px 30px 52px}
+.sec{margin-bottom:26px;break-inside:avoid}
+.item{margin-bottom:14px}
+.item h3{font-size:13.5px;font-weight:600;color:var(--heading);margin-bottom:4px}
+ul.dots{list-style:none}
+ul.dots li{position:relative;padding-left:14px;margin-bottom:3px}
+ul.dots li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--accent)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
+.interests{display:flex;gap:34px;margin-top:6px}
+.interests div{text-align:center;font-size:12px}
+.interests svg{width:34px;height:34px;display:block;margin:0 auto 6px;fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.sign{display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px;gap:16px;flex-wrap:wrap}
+.sign strong{font-family:'Raleway',sans-serif;letter-spacing:.08em}
+
+/* ===== Responsive ===== */
+@media (max-width:800px){
+  body{padding:0}
+  .page{width:100%;padding:12px;box-shadow:none}
+  .grid{grid-template-columns:1fr}
+  .name{font-size:32px}
+  .header,.body{padding:28px 20px}
+  .photo{height:260px}
+  .contact{min-height:150px}
+}
+
+/* ===== Print ===== */
+@page{size:A4;margin:0}
+@media print{
+  html,body{background:#fff;padding:0}
+  .page{box-shadow:none;margin:0;width:210mm}
+  .sec,.item{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="grid">
+
+  <!-- ================= LEFT COLUMN ================= -->
+  <aside class="left">
+    <div class="photo">
+      <!-- Replace this SVG with your photo: <img src="photo.jpg" alt="Dharshika S" style="width:100%;height:100%;object-fit:cover"> -->
+      <svg viewBox="0 0 100 100" fill="#888" aria-label="Photo placeholder"><circle cx="50" cy="34" r="18"/><path d="M12 100c0-24 17-40 38-40s38 16 38 40z"/></svg>
+      <div class="label"><span class="badge-big">ECE STUDENT</span></div>
+    </div>
+
+    <div class="edu">
+      <h2>Education</h2>
+      <h3>Bachelor of Engineering – Electronics and Communication Engineering</h3>
+      <p>M. Kumarasamy College of Engineering</p>
+      <p>CGPA: 7.8/10</p>
+      <p>Academic Year: <span class="ph" style="color:#fff;background:rgba(255,199,0,.3)">[Add your current year of study]</span></p>
+    </div>
+
+    <div class="skills">
+      <h2>Technical Skills</h2>
+      <!-- change --level to adjust each bar -->
+      <div class="skill"><span>PCB Design</span><div class="bar"><i style="--level:70%"></i></div></div>
+      <div class="skill"><span>Antenna Design</span><div class="bar"><i style="--level:65%"></i></div></div>
+      <div class="skill"><span>Circuit Analysis</span><div class="bar"><i style="--level:70%"></i></div></div>
+      <div class="skill"><span>Embedded Systems</span><div class="bar"><i style="--level:60%"></i></div></div>
+      <div class="skill"><span>Communication</span><div class="bar"><i style="--level:80%"></i></div></div>
+    </div>
+
+    <div class="contact">
+      <div class="strip">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.5L4.5 7v1.5L12 14l7.5-5.5V7z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      </div>
+      <ul>
+        <li><b>Phone</b><span class="ph">[Your Phone Number]</span></li>
+        <li><b>Email</b><span class="ph">[Your Email Address]</span></li>
+        <li><b>Area</b>Tamil Nadu, India</li>
+        <li><b>LinkedIn</b><span class="ph">[Your LinkedIn Profile]</span></li>
+        <li><b>GitHub</b><span class="ph">[Your GitHub Profile]</span></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ================= RIGHT COLUMN ================= -->
+  <main>
+    <header class="header">
+      <div class="name">DHARSHIKA S</div>
+      <div class="title-badge">ECE STUDENT</div>
+      <h2>Profile</h2>
+      <p>Motivated and enthusiastic Electronics and Communication Engineering student at M. Kumarasamy College of Engineering with a CGPA of 7.8. Interested in PCB design, antenna design, and project leadership. Participated in a paper presentation at KSR College of Engineering and successfully completed communication skills training. Eager to apply engineering knowledge, develop practical technical skills, collaborate on innovative projects, and contribute to real-world engineering solutions.</p>
+    </header>
+
+    <div class="body">
+
+      <section class="sec">
+        <h2>Career Objective</h2>
+        <p>To build a career in Electronics and Communication Engineering, with a focus on PCB design, antenna engineering, and innovative hardware development. Aspiring to take up project leadership responsibilities, contribute to collaborative engineering teams, and continuously improve technical and professional skills.</p>
+      </section>
+
+      <section class="sec">
+        <h2>Areas of Interest</h2>
+        <div class="item"><h3>PCB Design</h3><p>Printed circuit board design, circuit layout, component placement, and electronic hardware development.</p></div>
+        <div class="item"><h3>Antenna Design</h3><p>Antenna fundamentals, electromagnetic waves, antenna parameters, and wireless communication systems.</p></div>
+        <div class="item"><h3>Project Leadership</h3><p>Planning projects, coordinating team activities, managing tasks, and guiding projects from concept to implementation.</p></div>
+      </section>
+
+      <section class="sec">
+        <h2>Technical Interests</h2>
+        <ul class="dots">
+          <li>Electronic circuit design and analysis</li>
+          <li>PCB layout and hardware prototyping</li>
+          <li>Antenna and RF engineering fundamentals</li>
+          <li>Wireless communication systems</li>
+          <li>Embedded systems and electronics projects</li>
+        </ul>
+      </section>
+
+      <section class="sec">
+        <h2>Achievements and Participation</h2>
+        <div class="item">
+          <h3><span class="pill">Paper Presentation</span> KSR College of Engineering</h3>
+          <p>Participated in a paper presentation event. Gained exposure to technical presentation, explaining engineering concepts, and presenting technical ideas.</p>
+        </div>
+        <div class="item">
+          <h3><span class="pill">Communication Skills Training</span></h3>
+          <p>Successfully completed the training. Developed communication and professional presentation skills through training activities.</p>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>Project Experience</h2>
+        <div class="item">
+          <h3>Project Title: <span class="ph">[Add your project title]</span></h3>
+          <ul class="dots">
+            <li><b>Problem Statement:</b> <span class="ph">[Describe the problem addressed by your project.]</span></li>
+            <li><b>Proposed Solution:</b> <span class="ph">[Explain your approach.]</span></li>
+            <li><b>Technologies and Components:</b> <span class="ph">[List the hardware, software, and tools used.]</span></li>
+            <li><b>Individual Contribution:</b> <span class="ph">[Describe your specific responsibilities.]</span></li>
+            <li><b>Outcome:</b> <span class="ph">[Mention the prototype, results, or achievements.]</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>Technical Tools</h2>
+        <ul class="dots">
+          <li><b>PCB Design:</b> <span class="ph">[KiCad / Eagle / Altium Designer]</span></li>
+          <li><b>Simulation:</b> <span class="ph">[MATLAB / HFSS / Proteus]</span></li>
+          <li><b>Programming:</b> <span class="ph">[C / Python / Embedded C]</span></li>
+          <li><b>Documentation and Presentation:</b> <span class="ph">[MS Office / Canva]</span></li>
+        </ul>
+      </section>
+
+      <section class="sec">
+        <h2>Key Strengths</h2>
+        <ul class="dots">
+          <li>Interest in learning new technologies</li>
+          <li>Technical curiosity and problem-solving mindset</li>
+          <li>Interest in project planning and coordination</li>
+          <li>Willingness to improve communication and presentation skills</li>
+          <li>Commitment to continuous learning and development</li>
+        </ul>
+      </section>
+
+      <section class="sec">
+        <h2>Personal Development</h2>
+        <p>Committed to strengthening technical expertise, improving professional communication, and gaining hands-on experience through engineering projects, technical events, and collaborative learning.</p>
+      </section>
+
+      <section class="sec">
+        <h2>Interests</h2>
+        <div class="interests">
+          <div>
+            <svg viewBox="0 0 40 40"><rect x="8" y="6" width="24" height="28" rx="2"/><circle cx="14" cy="13" r="1.5"/><circle cx="26" cy="13" r="1.5"/><circle cx="14" cy="27" r="1.5"/><circle cx="26" cy="27" r="1.5"/><path d="M14 13h12M14 27h12M20 13v14M12 20h5M23 20h5"/></svg>PCB Design</div>
+          <div>
+            <svg viewBox="0 0 40 40"><path d="M20 34V16M12 34l8-18 8 18M20 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM10 8a14 14 0 0 0 0 12M30 8a14 14 0 0 1 0 12"/></svg>Antenna</div>
+          <div>
+            <svg viewBox="0 0 40 40"><circle cx="20" cy="12" r="5"/><path d="M8 34c0-8 5-12 12-12s12 4 12 12M30 8l2 2 4-4"/></svg>Leadership</div>
+          <div>
+            <svg viewBox="0 0 40 40"><path d="M6 12l14-6 14 6-14 6zM12 16v9c0 3 16 3 16 0v-9M34 12v10"/></svg>Learning</div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>Declaration</h2>
+        <p>I hereby declare that the information provided above is true to the best of my knowledge.</p>
+        <div class="sign">
+          <div>Place: <span class="ph">[Your Location]</span><br>Date: <span class="ph">[Date]</span></div>
+          <div style="text-align:right">Signature: ____________<br><strong>DHARSHIKA S</strong></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</div>
+</div>
+</body>
+</html>
